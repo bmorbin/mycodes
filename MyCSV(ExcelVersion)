@@ -21,7 +21,7 @@ def main():
     
     print(BARRA_SEPARADORA)
     print()
-    print("MyCSV Program - Created by Bruno Groper Morbin®\nVersão para Excel")
+    print("MyCSV Program - Created by Bruno Groper Morbin©\nVersão para Excel")
     print(BARRA_SEPARADORA)
     print()
     print('ESTE PROGRAMA TEM POR FINALIDADE CRIAR OU ATUALIZAR UMA PLANILHA CUJO FORMATO DO ARQUIVO É ".csv".\n\nObservação: Caso queira acessar uma planilha já existente, é necessário que a mesma não esteja aberta durante a \nexecução do programa.')
