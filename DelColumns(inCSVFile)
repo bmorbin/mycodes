@@ -4,31 +4,40 @@
 
 import pandas as pd
 
-#Obs.: Este script deve estar no mesmo diretório que se encontra a tabela
-dados = (input("NOME DA TABELA: ")) + ".csv"
-df = pd.read_csv(dados)
+def main():
+    if input("APERTE ENTER PARA ESCOLHER A TABELA") == "":
+        executa()
 
-print(df.columns)
+def executa():
+  #Obs.: Este script deve estar no mesmo diretório que se encontra a tabela
+  dados = (input("NOME DA TABELA: ")) + ".csv"
+  df = pd.read_csv(dados)
 
-columns_del = input("COLUMNS A SEREM REMOVIDAS: ").split(",")
-print (columns_del)
+  print(df.columns)
 
-p = input("APERTE ENTER PARA CONTINUAR")
-                    
-if p == "":
-    df = df.drop(columns=columns_del)
+  columns_del = input("COLUMNS A SEREM REMOVIDAS: ").split(",")
+  print (columns_del)
 
-    print(type(df))
-    
-    '''
-    se quisesse criar um dataframe a partir de um dicionário, cujas chaves seriam as colunas e
-    os valores seriam listas com informações da respectiva coluna. Ex.:
-         data = { "character" : [ "Pooh", "Eeore", "Rabbit", "Piglet"],  "age" : [5, 10, 7, 3], "colour" : [ "Yellow", "Grey", "Brown", "Pink"] }
-    depois faria:
-        df = pd.DataFrame(data)
-    '''
-    
-    nome_newtab = (input("DIGITE O NOME DA TABELA: ")) + ".csv"
-    
-    #salvando arquivo dataframe
-    df.to_csv(nome_newtab)
+  p = input("APERTE ENTER PARA CONTINUAR")
+
+  if p == "":
+      df = df.drop(columns=columns_del)
+
+      print(type(df))
+
+      '''
+      se quisesse criar um dataframe a partir de um dicionário, cujas chaves seriam as colunas e
+      os valores seriam listas com informações da respectiva coluna. Ex.:
+           data = { "character" : [ "Pooh", "Eeore", "Rabbit", "Piglet"],  "age" : [5, 10, 7, 3], "colour" : [ "Yellow", "Grey", "Brown", "Pink"] }
+      depois faria:
+          df = pd.DataFrame(data)
+      '''
+
+      nome_newtab = (input("DIGITE O NOME DA TABELA: ")) + ".csv"
+
+      #salvando arquivo dataframe
+      df.to_csv(nome_newtab)
+  main()
+
+if __name__=="__main__":
+    main()
