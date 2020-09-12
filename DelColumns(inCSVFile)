@@ -8,6 +8,54 @@ def main():
     if input("APERTE ENTER PARA ESCOLHER A TABELA") == "":
         executa()
 
+def pop():
+    df = pd.read_csv("C:/Users/Bruno/Desktop/expimpcult.csv")
+    print(df.columns)
+    #Para descobrir valores nulos no dataframe:
+        #Fonte:https://medium.com/@lucasoliveiras/limpeza-e-prepara%C3%A7%C3%A3o-dos-dados-com-pandas-856e844abfbb#:~:text=Por%20conta%20disso%2C%20a%20biblioteca,vamos%20importar%20a%20biblioteca%20Pandas.&text=Vamos%20criar%20um%20dicion%C3%A1rio%20em,passar%20ele%20para%20um%20DataFrame.
+    print(df.isnull().sum())
+    
+    #contar quantos valores tem nas colunas
+    print(df.count())
+    
+    #remover os valores nulos
+    df = df.dropna()
+    
+    
+    print(df.count())
+    print(df.isnull().sum())
+    
+    
+    #print(df.head(10))
+    #print(df['Value'])
+    
+    
+    #https://www.it-swarm.dev/pt/python/alterar-tipo-de-dados-de-colunas-em-pandas/1072113742/
+    #df['Value'] = df['Value']*1000
+    
+    #https://www.it-swarm.dev/pt/python/alterar-tipo-de-dados-de-colunas-em-pandas/1072113742/
+    #df['Value'] = df['Value'].astype(int)
+    
+    
+    #https://www.alura.com.br/artigos/como-remover-linhas-e-colunas-no-pandas
+    filtro=df['Value'] > 0
+    
+    #Para ver quantos valores 0.0 tinham
+        #Fonte:https://www.it-swarm.dev/pt/python/contar-frequencia-dos-valores-na-coluna-pandas-dataframe/823797372/
+    print(filtro.value_counts())
+    df[filtro].to_csv("C:/Users/Bruno/Desktop/expimpcultura.csv",index=False)
+    #print(df['Value'])            
+    #print(df.head(10))
+    
+    #https://www.it-swarm.dev/pt/python/importar-arquivo-csv-como-um-pandas-dataframe/1071642502/
+    #index=False para não salvar com coluna de que conta as linhas
+    #df.to_csv("C:/Users/Bruno/Desktop/pop_arrumada.csv",index=False)
+
+def exclui_colunas():
+    df = pd.read_csv("C:/Users/Bruno/Desktop/Tabelas_A1FGV/tabs_arrumadas/pais.csv")
+    df = df.drop(columns=['Domain Code', 'Domain', 'Element Code', 'Element','Item Code', 'Item', 'Year Code', 'Year', 'Value', 'Note'])
+    df.to_csv("C:/Users/Bruno/Desktop/paises.csv",index=False)
+
 def executa():
   #Obs.: Este script deve estar no mesmo diretório que se encontra a tabela
   dados = (input("NOME DA TABELA: ")) + ".csv"
