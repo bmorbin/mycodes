@@ -1,0 +1,39 @@
+%564%257Bnote
+a2
+
+SELECT nome_pais AS pais,animal,anos_ano AS ano,valor AS valor,bandeira FROM animal_exp_value INNER JOIN paises ON paises_id_pais=id_pais
+pais animal ano valor bandeira
+#d90082
+#00FF00
+animal
+exportation
+n
+
+
+SELECT nome_pais AS pais,produto,anos_ano AS ano,valor AS valor,bandeira FROM produto_exp_value INNER JOIN paises ON paises_id_pais=id_pais
+pais produto ano valor bandeira
+#24592f
+#00FF00
+produto
+exportation
+
+exportation_values
+s
+
+SELECT nome_pais AS pais,produto,anos_ano AS ano,valor AS valor,bandeira FROM produto_imp_value INNER JOIN paises ON paises_id_pais=id_pais
+pais produto ano valor bandeira
+#24592f
+#FF0000
+produto
+importation
+n
+
+
+SELECT nome_pais AS pais,animal,anos_ano AS ano,valor AS valor,bandeira FROM animal_imp_value INNER JOIN paises ON paises_id_pais=id_pais
+pais animal ano valor bandeira
+#d90082
+#FF0000
+animal
+importation
+
+importation_values
