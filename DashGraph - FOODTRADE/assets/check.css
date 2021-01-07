@@ -1,0 +1,34 @@
+input{
+    all: unset;
+position:relative;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+ background-transparent: true;
+}
+input:checked{
+  background-transparent: true;
+background-image: url('https://i.postimg.cc/mkkKxP1Z/icon-selected-Prancheta-1-Prancheta-1.png');
+background-repeat: no-repeat;
+background-size:15px 15px;
+
+
+
+  
+}
+/* Style buttons */
+.btn {
+ background-transparent: true;
+background-image: url('https://i.postimg.cc/hjSHrySd/icon-not-selected-Prancheta-1.png');
+background-repeat: no-repeat;
+background-size:15px 15px;
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+background-transparent: true;
+background-image: url('https://i.postimg.cc/ZR86TH3V/icon-semi-selected-Prancheta-1.png');
+background-repeat: no-repeat;
+background-size:15px 15px;
+}
